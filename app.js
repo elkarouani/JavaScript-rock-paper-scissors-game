@@ -42,11 +42,25 @@ function win(userChoice, computerChoice) {
 }
 
 function lose(userChoice, computerChoice) {
-	
+	computerScore++;
+
+	userScore_span.innerHTML = userScore;
+	computerScore_span.innerHTML = computerScore;
+
+	const smalUserWord = "user".fontsize(3).sub();
+	const smalCompWord = "comp".fontsize(3).sub();
+
+	result_p.innerHTML = `${convertToWord(userChoice)}${smalUserWord} lose to ${convertToWord(computerChoice)}${smalCompWord}. You lost!`;	
 }
 
 function draw(userChoice, computerChoice) {
-	
+	userScore_span.innerHTML = userScore;
+	computerScore_span.innerHTML = computerScore;
+
+	const smalUserWord = "user".fontsize(3).sub();
+	const smalCompWord = "comp".fontsize(3).sub();
+
+	result_p.innerHTML = `${convertToWord(userChoice)}${smalUserWord} equals ${convertToWord(computerChoice)}${smalCompWord}. Its a draw!`;
 }
 
 function game(userChoice) {

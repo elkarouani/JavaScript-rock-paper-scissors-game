@@ -11,6 +11,7 @@ const scissors_div = document.getElementById("s");
 function getComputerChoice() {
 	const choices = ['r', 'p', 's'];
 	const randomNumber = Math.floor(Math.random() * 3);
+	
 	return choices[randomNumber];
 }
 
@@ -30,9 +31,14 @@ function convertToWord(letter) {
 
 function win(userChoice, computerChoice) {
 	userScore++;
+
 	userScore_span.innerHTML = userScore;
 	computerScore_span.innerHTML = computerScore;
-	result_p.innerHTML = convertToWord(userChoice) + " beats " + convertToWord(computerChoice) + ". You win!";
+
+	const smalUserWord = "user".fontsize(3).sub();
+	const smalCompWord = "comp".fontsize(3).sub();
+
+	result_p.innerHTML = `${convertToWord(userChoice)}${smalUserWord} beats ${convertToWord(computerChoice)}${smalCompWord}. You win!`;
 }
 
 function lose(userChoice, computerChoice) {
